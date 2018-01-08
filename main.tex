@@ -1,0 +1,81 @@
+
+\documentclass[11pt]{article}
+%\documentclass[11pt,titlepage]{article}
+%\documentclass[11pt,letterpage]{article}
+\usepackage{graphics,tabularx,subfigure,color,calc,verbatim,epsfig,fullpage,authblk,appendix}
+\usepackage[normalem]{ulem}
+\usepackage{textcomp}
+%\usepackage{wrapfig}
+\definecolor{remarkcolour}{rgb}{0.8, 0.0, 0.0}
+\usepackage{setspace} 
+%\doublespacing
+\usepackage[round,numbers,sort&compress]{natbib} 
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{20.5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\topmargin}{0 cm}
+
+% Numbering style in the list of references: a number followed by a period
+%\renewcommand{\bibnumfmt}[1]{#1.}
+\makeatletter
+\renewcommand\@biblabel[1]{#1.}
+\makeatother
+
+\makeatletter
+\def\@cite#1#2{$()#1\if@tempswa , #2\fi$}
+\makeatother
+% Examples of special definitions (amsmath package required)
+\newcommand{\erf}{\operatorname{erf}}        % error function
+\newcommand{\erfc}{\operatorname{erfc}}      % complementary error function
+\newcommand{\BibTeX}{\textsc{Bib}\TeX}       % corect BibTeX appearance
+
+\def\chapdir{chapters}
+\def\imgdir{images}
+\def\bibstldir{.}
+\def\bibdir{.}
+\usepackage{lineno}
+% enable line numbers [for referencing to the reviewers]
+%\linenumbers
+
+\title{Title}
+
+\author[1,**]{A. Author1}
+\author[2,**]{B. Author2} 
+\author[3,1]{C. Author3}
+\author[3]{D. Author 4\thanks{Correspondence should be addressed to: contact info. }}
+\affil[1]{\footnotesize{affil. 1}}
+\affil[2]{affil. 2}
+\affil[3]{affil. 3}
+\affil[**]{These authors contributed equally to this paper.}
+
+\begin{document}
+%\singlespace
+% generate the title page from the info in the headers above
+\maketitle
+\newpage
+% 200 words max Abstract
+\abstract{
+Abstract text goes here.
+}
+\section*{Introduction}
+Cite a book (@book)~\citep{hyde1997language}.
+Cite a chapter in a book (@incollection)~\citep{proksch2008skin}.
+Cite a paper (@article)~\citep{abraham2015gromacs}.
+%\input{\chapdir/introduction}
+\section*{Methods}
+%\input{\chapdir/methods}
+\section*{Results}
+%\input{\chapdir/results}
+\section*{Discussion}
+%\input{\chapdir/discussion}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography style (requires the style file biophysj.bst in the 
+% document directory)
+
+\bibliographystyle{biophysj2}
+\bibliography{bibliography_abbr}
+
+
+% closing statement, nothing below matters
+\end{document}
